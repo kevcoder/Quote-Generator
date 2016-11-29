@@ -3,7 +3,7 @@
 
 //document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-
+//Create a list of objects which contains, 3 properties quote, source, citation which we will than place in an array with the rest of the objects and chose one randomly
 var markTwain = {
 		quote: "Don't go around saying the world owes you a living. The world owes you nothing. It was here first.",
 		source: 'Mark Twain',
@@ -28,11 +28,61 @@ var unknown = {
 	citation: 'blah'
 }
 
-var JaneGoodall = {
-	quote: " If you really want something,& really work hard, & take advantage of opportunities, & never give up, you will find a way."
+var janeGoodall = {
+	quote: " If you really want something,& really work hard, & take advantage of opportunities, & never give up, you will find a way.",
 	source: 'Jane Goodall',
 	citation: 'blah'
 
 }
-//Array of quotes, which will be used to be displayed on the page.
-var quotes = [markTwain, robertKennedy, proverbs1728,  , ""] 
+ 
+ //Create Array named quotes which will hold all our objects
+var quotes = [markTwain, robertKennedy, proverbs1728, unknown, janeGoodall];
+
+
+//Create a function called getRandomQuote that selects random quote from the quotes array and returns the random quote selected
+var getRandomQuote = function() {
+	var randomQuote = Math.floor(Math.random() * quotes.length) + 1;
+	return quotes[randomQuote];
+}
+
+//Create a function called PrintQuote that calls getRandomQuote and stores it in a variable
+var printQuote = function(){
+
+}
+
+
+
+
+
+console.log(getRandomQuote());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
