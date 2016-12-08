@@ -1,4 +1,7 @@
+// event listener to respond to "Show another quote" button clicks
+// when user clicks anywhere on the button, the "printQuote" function is called
 
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 // Create a list of objects which contains, 3 properties quote, source, citation which we will than place in an array with the rest of the objects and chose one randomly
 var markTwain = {
@@ -44,7 +47,7 @@ var quotes = [
 
 
 //Create a function called getRandomQuote that selects random quote object from the quotes array and returns the random quote object selected
-var getRandomQuote = function() {
+function getRandomQuote() {
 	var randomQuote = Math.floor(Math.random() * quotes.length);
 	var quoteSelected = quotes[randomQuote];
 	return quoteSelected;
@@ -54,18 +57,20 @@ var getRandomQuote = function() {
 
 
 //Create a function called PrintQuote that calls getRandomQuote and stores it in a variable
-var printQuote = function(){
+function printQuote(){
 	var selectedQuote = getRandomQuote();
-	return document.write("<p>" + selectedQuote.quote + "</p>" +
-	 											"<p> " + selectedQuote.source + "</p>" + 
-	 											"<p>" + selectedQuote.citation+ "</p>" );  
+	var message;
+
+			message += '<p class = "quote">' + selectedQuote.quote + '</p>';
+			message += '<p class= "source">' + selectedQuote.source + '</p>'
+			document.getElementById('quote-box').innerHTML = message;
 }
 
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 printQuote();
+
+
+
 
 
 
